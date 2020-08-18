@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# compress  the contents of the web_static folder
+"""deploy module"""
 
 from fabric.api import run, local, sudo
 from datetime import datetime
