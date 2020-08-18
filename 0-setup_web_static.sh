@@ -8,12 +8,19 @@ touch "/data/web_static/releases/test/index.html"
 ln -sf "/data/web_static/releases/test/" "/data/web_static/current"
 cat >> "/data/web_static/releases/test/index.html" <<EOL
 <html>
-<head>
-	<title>HBNB Clone</title>
-</head>
-<body>
-	<img src="https://cloudfront-us-east-1.images.arcpublishing.com/copesa/HXQD76TYD5GTFJP67CPT5XDQTM.jpeg" alt="baby joda" width="500" height="600">
-</body>
+  <head>
+  </head>
+  <body>
+    Holberton School
+  </body>
+</html>
+ubuntu@89-web-01:~/$ curl localhost/hbnb_static/index.html
+<html>
+  <head>
+  </head>
+  <body>
+    Holberton School
+  </body>
 </html>
 EOL
 chown -R ubuntu:ubuntu "/data/"
