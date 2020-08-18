@@ -14,14 +14,6 @@ cat >> "/data/web_static/releases/test/index.html" <<EOL
     Holberton School
   </body>
 </html>
-ubuntu@89-web-01:~/$ curl localhost/hbnb_static/index.html
-<html>
-  <head>
-  </head>
-  <body>
-    Holberton School
-  </body>
-</html>
 EOL
 chown -R ubuntu:ubuntu "/data/"
 sed -i '/server_name _;/ a\location /hbnb_static { alias /data/web_static/current/;}' /etc/nginx/sites-available/default
