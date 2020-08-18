@@ -9,8 +9,7 @@ env.hosts = ['54.227.187.33', '35.243.239.50']
 
 
 def do_pack():
-    """Packs"""
-
+    """packs"""
     fn = 'versions/web_static_{}{}{}{}{}{}.tgz'\
         .format(n.year, n.month, n.day, n.hour, n.minute, n.second)
     local('mkdir -p versions')
@@ -21,8 +20,7 @@ def do_pack():
 
 
 def do_deploy(archive_path):
-    """Deploy the airbnb static
-    """
+    """deploy the airbnb static"""
     if not path.exists(archive_path):
         return False
     ret_value = True
@@ -63,7 +61,6 @@ def do_deploy(archive_path):
 
 def deploy():
     """packs and deploys a tar file to a web server"""
-
     return_pack = do_pack()
     if return_pack is None:
         return False
