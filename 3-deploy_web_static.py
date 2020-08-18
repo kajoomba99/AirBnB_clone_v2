@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 """deploy module"""
 
-from fabric.api import run, local, sudo
+from fabric.api import *
 from datetime import datetime
 
-n = datetime.now()
+
 env.hosts = ['54.227.187.33', '35.243.239.50']
 
 
 def do_pack():
-    """packs"""
+    """packs here is the documentation"""
+    n = datetime.now()
     fn = 'versions/web_static_{}{}{}{}{}{}.tgz'\
         .format(n.year, n.month, n.day, n.hour, n.minute, n.second)
     local('mkdir -p versions')
@@ -20,7 +21,7 @@ def do_pack():
 
 
 def do_deploy(archive_path):
-    """deploy the airbnb static"""
+    """deploy the airbnb static it's a good practice"""
     if not path.exists(archive_path):
         return False
     ret_value = True
@@ -60,7 +61,7 @@ def do_deploy(archive_path):
 
 
 def deploy():
-    """packs and deploys a tar file to a web server"""
+    """packs and deploys a tar file to a web server to document well"""
     return_pack = do_pack()
     if return_pack is None:
         return False
