@@ -11,9 +11,9 @@ app = Flask(__name__)
 def states(id):
     states = storage.all(State)
     if id is None:
-        return render_template('9-states.html' , states = states.values())
+        return render_template('9-states.html', states=states.values())
     state_by_id = states.get("State.{}".format(id), None)
-    return render_template('9-states.html' , state_by_id = state_by_id)
+    return render_template('9-states.html', state_by_id=state_by_id)
 
 
 @app.teardown_appcontext
